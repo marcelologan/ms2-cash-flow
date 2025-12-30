@@ -1,0 +1,48 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Importar variáveis PRIMEIRO */
+@import './variables.css';
+
+/* Importar componentes */
+@import './components/cards.css';
+@import './components/buttons.css';
+@import './components/forms.css';
+@import './components/tables.css';
+
+/* Importar layouts */
+@import './layouts/main.css';
+
+/* Importar cores customizadas */
+@import './custom-colors.css';
+
+/* Estilos globais */
+body {
+  font-family: 'Figtree', sans-serif;
+  color: var(--color-font);
+}
+
+/* Utilitários customizados */
+.text-money {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-weight: 600;
+}
+
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilos para páginas de detalhes */
+.info-group {
+    @apply space-y-1;
+}
+
+.info-label {
+    @apply block text-sm font-medium;
+    color: var(--color-font);
+}
+
+.info-value {
+    color: var(--color-font);
+}

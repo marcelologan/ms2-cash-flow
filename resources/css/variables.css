@@ -1,0 +1,43 @@
+/* Paleta de Cores Customizada */
+:root {
+  /* Cores Principais */
+  --color-main: #45aaf2;
+  --color-second: #20bf6b;
+  --color-font: #2d3436;
+  --color-bg: #dfe6e9;
+  --color-link: #8854d0;
+  --color-danger: #eb3b5a;
+  --color-success: #26de81;
+  --color-warning: #fed330;
+  
+  /* Variações para componentes */
+  --color-main-50: #eff8ff;
+  --color-main-100: #dbeafe;
+  --color-main-600: var(--color-main);
+  --color-main-700: #3b82f6;
+  --color-main-800: #1e40af;
+  
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-600: var(--color-success);
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-600: var(--color-danger);
+  --color-danger-700: #b91c1c;
+  --color-danger-800: #991b1b;
+  
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-600: var(--color-warning);
+  --color-warning-700: #d97706;
+  --color-warning-800: #92400e;
+  
+  --color-second-50: #f0fdf4;
+  --color-second-100: #dcfce7;
+  --color-second-600: var(--color-second);
+  --color-second-700: #15803d;
+  --color-second-800: #166534;
+}

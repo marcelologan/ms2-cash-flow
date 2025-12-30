@@ -1,0 +1,110 @@
+/* Formulários Base */
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium mb-2;
+  color: var(--color-font);
+}
+
+.form-label.required::after {
+  content: " *";
+  color: var(--color-danger);
+}
+
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:border-transparent transition-colors duration-200;
+  --tw-ring-color: var(--color-main);
+}
+
+.form-input:focus {
+  border-color: var(--color-main);
+}
+
+.form-input:invalid {
+  border-color: var(--color-danger);
+  --tw-ring-color: var(--color-danger);
+}
+
+.form-select {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:border-transparent bg-white transition-colors duration-200;
+  --tw-ring-color: var(--color-main);
+}
+
+.form-select:focus {
+  border-color: var(--color-main);
+}
+
+.form-textarea {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:border-transparent min-h-[100px] transition-colors duration-200;
+  --tw-ring-color: var(--color-main);
+  resize: vertical;
+}
+
+.form-textarea:focus {
+  border-color: var(--color-main);
+}
+
+.form-checkbox {
+  @apply h-4 w-4 border-gray-300 rounded;
+  color: var(--color-main);
+  --tw-ring-color: var(--color-main);
+}
+
+.form-radio {
+  @apply h-4 w-4 border-gray-300;
+  color: var(--color-main);
+  --tw-ring-color: var(--color-main);
+}
+
+/* Estados de erro */
+.form-error {
+  @apply text-sm mt-1;
+  color: var(--color-danger);
+}
+
+.form-input.error {
+  border-color: var(--color-danger);
+  --tw-ring-color: var(--color-danger);
+}
+
+/* Texto de ajuda */
+.form-help {
+  @apply text-sm mt-1;
+  color: var(--color-font);
+  opacity: 0.6;
+}
+
+/* Grupos de input */
+.input-group {
+  @apply flex;
+}
+
+.input-group .form-input {
+  @apply rounded-r-none border-r-0;
+}
+
+.input-group-append {
+  @apply border border-l-0 border-gray-300 rounded-r-md px-3 py-2 text-sm flex items-center;
+  background-color: var(--color-bg);
+  color: var(--color-font);
+}
+
+/* Formulário em grid */
+.form-grid {
+  @apply grid gap-4;
+}
+
+.form-grid.cols-2 {
+  @apply grid-cols-1 md:grid-cols-2;
+}
+
+.form-grid.cols-3 {
+  @apply grid-cols-1 md:grid-cols-3;
+}
+
+/* Botões de formulário */
+.form-actions {
+  @apply flex items-center justify-end space-x-3 pt-6 border-t border-gray-200;
+}
