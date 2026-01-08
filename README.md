@@ -1,59 +1,260 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+**PERFEITO! 🎉**
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Excelente cobertura de screenshots! Você capturou tudo mesmo - desde landing page até versão mobile completa.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📝 **AGORA VOU ATUALIZAR O README.md COMPLETO:**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```markdown
+# 💰 MS2 Cash Flow - Sistema de Controle Financeiro
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![Logo](public/images/MS2%20Cash_Flow_Logo.png)
 
-## Learning Laravel
+## 📋 Sobre o Projeto
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+O **MS2 Cash Flow** é um sistema completo de controle financeiro pessoal desenvolvido em Laravel, que permite o gerenciamento eficiente de receitas, despesas e relatórios financeiros.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### ✨ Principais Funcionalidades
 
-## Laravel Sponsors
+- 💳 **Gestão de Transações**: Cadastro e controle de entradas e saídas
+- 📊 **Relatórios Detalhados**: Visualização e exportação em PDF
+- 🏷️ **Categorização**: Organização por categorias personalizáveis
+- 🔍 **Filtros Avançados**: Busca por período, tipo, situação e texto
+- 📱 **Interface Responsiva**: Compatível com desktop, tablet e mobile
+- 🔐 **Sistema de Autenticação**: Login seguro com Laravel Breeze
+- 📄 **Exportação PDF**: Relatórios profissionais com logo e ícones
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🚀 Tecnologias Utilizadas
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- **Backend**: Laravel 11.x
+- **Frontend**: Blade Templates + Tailwind CSS
+- **Banco de Dados**: MySQL/PostgreSQL/SQLite
+- **Autenticação**: Laravel Breeze
+- **PDF**: DomPDF
+- **Icons**: FontAwesome (convertidos para PNG)
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## �� Instalação
 
-## Code of Conduct
+### Pré-requisitos
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- PHP 8.2+
+- Composer
+- Node.js & NPM
+- MySQL/PostgreSQL/SQLite
 
-## Security Vulnerabilities
+### Passo a Passo
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. **Clone o repositório**
+```bash
+git clone https://github.com/marcelologan/ms2-cash-flow.git
+cd ms2-cash-flow
+```
 
-## License
+2. **Instale as dependências**
+```bash
+composer install
+npm install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. **Configure o ambiente**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+4. **Configure o banco de dados**
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=ms2_cash_flow
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+```
+
+5. **Execute as migrations e seeders**
+```bash
+php artisan migrate --seed
+```
+
+6. **Compile os assets**
+```bash
+npm run build
+```
+
+7. **Inicie o servidor**
+```bash
+php artisan serve
+```
+
+8. **Acesse o sistema**
+```
+http://localhost:8000
+```
+
+---
+
+## 👤 Usuário Padrão
+
+Após executar os seeders, você pode fazer login com:
+
+- **Email**: test@example.com
+- **Senha**: password
+
+---
+
+## 📱 Screenshots
+
+### 🏠 Landing Page
+![Landing Page](docs/screenshots/01%20-%20landing_page.png)
+
+### 🔐 Sistema de Autenticação
+| Login | Registro |
+|-------|----------|
+| ![Login](docs/screenshots/02%20-%20login.png) | ![Registro](docs/screenshots/03%20-%20register.png) |
+
+### 📊 Dashboard Principal
+![Dashboard](docs/screenshots/03
+-1%20-%20dashboard.png)
+
+### 💳 Gestão de Transações
+| Nova Transação | Lista de Transações |
+|----------------|---------------------|
+| ![Nova Transação](docs/screenshots/04%20-%20new_trasaction.png) | ![Lista](docs/screenshots/05%20-%20transactions.png) |
+
+### 🔍 Sistema de Filtros
+| Filtros Básicos | Filtros Avançados |
+|-----------------|-------------------|
+| ![Filtro 1](docs/screenshots/06%20-%20filter_1.png) | ![Filtro 2](docs/screenshots/07%20-%20filter_2.png) |
+
+### 📄 Relatório PDF
+![Relatório](docs/screenshots/08%20-%20report.png)
+
+### 📱 Versão Mobile
+| Dashboard Mobile | Nova Transação | Lista Mobile |
+|------------------|----------------|--------------|
+| ![Mobile Dashboard 1](docs/screenshots/09%20-%20mobile_dashboard_1.png) | ![Mobile Form](docs/screenshots/12%20-%20mobile_new_transaction.png) | ![Mobile List](docs/screenshots/13%20-%20mobile_transactions_list.png) |
+
+| Dashboard Completo | Menu Mobile | Filtros Mobile |
+|--------------------|-------------|----------------|
+| ![Mobile Dashboard 2](docs/screenshots/10%20-%20mobile_dashboard_2.png) | ![Mobile Dashboard 3](docs/screenshots/11%20-%20mobile_dashboard_3.png) | ![Mobile Filter](docs/screenshots/14%20-%20mobile_filter.png) |
+
+---
+
+## �� Funcionalidades Detalhadas
+
+### 💳 Gestão de Transações
+- ✅ Cadastro de entradas e saídas
+- ✅ Categorização automática
+- ✅ Controle de vencimento e pagamento
+- ✅ Status: Pago, A Pagar, Vencido
+- ✅ Descrições detalhadas
+
+### 📊 Sistema de Relatórios
+- ✅ Resumo financeiro (entradas, saídas, saldo)
+- ✅ Filtros por período, tipo e situação
+- ✅ Busca por texto
+- ✅ Exportação em PDF profissional
+- ✅ Logo e ícones personalizados
+
+### 🏷️ Categorias
+- ✅ Categorias pré-definidas
+- ✅ Cores personalizadas
+- ✅ Organização visual
+
+### 🔐 Segurança
+- ✅ Autenticação Laravel Breeze
+- ✅ Proteção CSRF
+- ✅ Validação de dados
+- ✅ Sanitização de entradas
+
+---
+
+## 🗂️ Estrutura do Projeto
+
+```
+ms2-cash-flow/
+├── app/
+│   ├── Enums/          # Enums para tipos e situações
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   └── Requests/   # Form Requests
+│   └── Models/         # Eloquent Models
+├── database/
+│   ├── migrations/     # Estrutura do banco
+│   └── seeders/        # Dados iniciais
+├── docs/
+│   └── screenshots/    # Capturas de tela
+├── public/
+│   └── images/
+│       └── icons/      # Ícones PNG para PDF
+├── resources/
+│   ├── views/
+│   │   ├── transactions/
+│   │   └── layouts/
+│   └── css/
+└── routes/
+    └── web.php
+```
+
+---
+
+## 🔧 Configurações Importantes
+
+### Configuração de PDF
+O sistema utiliza DomPDF para geração de relatórios. Certifique-se de que a pasta `public/images/icons/` contenha todos os ícones necessários.
+
+### Configuração de Timezone
+```env
+APP_TIMEZONE=America/Sao_Paulo
+```
+
+### Configuração de Locale
+```env
+APP_LOCALE=pt_BR
+```
+
+---
+
+## 🤝 Contribuição
+
+1. Faça um Fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## 👨‍💻 Desenvolvedor
+
+**Marcelo Souza**
+- GitHub: [@marcelologan](https://github.com/marcelologan)
+- LinkedIn: [Marcelo Souza](https://www.linkedin.com/in/marcelosouza77/)
+- Projeto: [MS2 Cash Flow](https://github.com/marcelologan/ms2-cash-flow)
+
+---
+
+## 🆘 Suporte
+
+Se você encontrar algum problema ou tiver dúvidas:
+
+1. Verifique as [Issues](https://github.com/marcelologan/ms2-cash-flow/issues) existentes
+2. Crie uma nova Issue se necessário
+3. Entre em contato através do GitHub
+
+---
+
+**⭐ Se este projeto foi útil para você, considere dar uma estrela!**
+```

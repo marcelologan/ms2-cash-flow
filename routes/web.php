@@ -16,6 +16,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    // ✅ ROTA DE EXPORT PDF (ANTES DE TODAS AS OUTRAS DE TRANSACTIONS)
+    Route::get('/transactions/export-pdf', [TransactionController::class, 'exportPdf'])->name('transactions.export-pdf');
+
     // Rotas específicas de transações (ANTES da resource)
     Route::get('/transactions/categories/all', [TransactionController::class, 'getAllCategories'])
         ->name('transactions.categories-all');

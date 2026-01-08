@@ -1,0 +1,416 @@
+/* ===================================================================
+   COMPONENTES DE RELATÓRIOS
+   ================================================================ */
+
+/* Cards de Navegação de Relatórios */
+.report-card {
+  display: flex;
+  align-items: center;
+  space-x: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.report-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.report-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.report-card:hover .report-icon {
+  transform: scale(1.05);
+}
+
+.report-content {
+  flex: 1;
+}
+
+.report-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  transition: color 0.2s ease-in-out;
+  color: var(--color-font);
+}
+
+.report-description {
+  font-size: 0.875rem;
+  color: var(--color-font);
+  opacity: 0.7;
+}
+
+.report-arrow {
+  flex-shrink: 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.report-card:hover .report-arrow {
+  transform: translateX(4px);
+}
+
+/* Ícones dos Relatórios com Cores da Paleta */
+.report-icon.cash-flow {
+  background-color: var(--color-main);
+}
+
+.report-icon.category {
+  background-color: var(--color-success);
+}
+
+.report-icon.comparison {
+  background-color: var(--color-warning);
+}
+
+.report-icon.status {
+  background-color: var(--color-link);
+}
+
+/* Cards de Estatísticas de Relatórios */
+.report-stat-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.report-stat-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.report-stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.report-stat-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-font);
+  opacity: 0.8;
+}
+
+.report-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-font);
+}
+
+.report-stat-change {
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.report-stat-change.positive {
+  color: var(--color-success);
+}
+
+.report-stat-change.negative {
+  color: var(--color-danger);
+}
+
+.report-stat-change.neutral {
+  color: var(--color-font);
+  opacity: 0.6;
+}
+
+/* Filtros de Relatórios */
+.report-filters {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.report-filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.report-filters-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-font);
+}
+
+.report-filters-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .report-filters-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.report-filters-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Tabelas de Relatórios */
+.report-table {
+  min-width: 100%;
+}
+
+.report-table-header {
+  background-color: var(--color-bg);
+}
+
+.report-table-header th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-font);
+}
+
+.report-table-body {
+  background-color: white;
+}
+
+.report-table-body tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.report-table-row:hover {
+  background-color: #f9fafb;
+}
+
+.report-table-cell {
+  padding: 1rem 1.5rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  color: var(--color-font);
+}
+
+.report-table-cell.number {
+  text-align: right;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.report-table-cell.currency {
+  text-align: right;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-weight: 600;
+}
+
+.report-table-cell.currency.positive {
+  color: var(--color-success);
+}
+
+.report-table-cell.currency.negative {
+  color: var(--color-danger);
+}
+
+/* Gráficos de Relatórios */
+.report-chart-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+}
+
+.report-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.report-chart-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-font);
+}
+
+.report-chart-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.report-chart-canvas {
+  width: 100%;
+  height: 16rem;
+}
+
+@media (min-width: 768px) {
+  .report-chart-canvas {
+    height: 20rem;
+  }
+}
+
+/* Resumos de Relatórios */
+.report-summary {
+  background: linear-gradient(to right, #f9fafb, #f3f4f6);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.report-summary-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-font);
+}
+
+.report-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .report-summary-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.report-summary-item {
+  text-align: center;
+}
+
+.report-summary-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  color: var(--color-font);
+  opacity: 0.7;
+}
+
+.report-summary-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-font);
+}
+
+/* Indicadores de Performance */
+.report-indicator {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.report-indicator.excellent {
+  background-color: var(--color-success-100);
+  color: var(--color-success-800);
+}
+
+.report-indicator.good {
+  background-color: var(--color-main-100);
+  color: var(--color-main-800);
+}
+
+.report-indicator.warning {
+  background-color: var(--color-warning-100);
+  color: var(--color-warning-800);
+}
+
+.report-indicator.danger {
+  background-color: var(--color-danger-100);
+  color: var(--color-danger-800);
+}
+
+/* Responsividade para Relatórios */
+@media (max-width: 768px) {
+  .report-card {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .report-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .report-filters-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .report-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .report-chart-canvas {
+    height: 12rem;
+  }
+}
+
+/* Hover Effects para Report Cards */
+.report-card:hover .report-title {
+  color: var(--color-main);
+}
+
+/* Animações específicas para ícones */
+.report-card:hover .report-icon.cash-flow {
+  background: linear-gradient(135deg, var(--color-main), var(--color-main-700));
+}
+
+.report-card:hover .report-icon.category {
+  background: linear-gradient(135deg, var(--color-success), var(--color-success-700));
+}
+
+.report-card:hover .report-icon.comparison {
+  background: linear-gradient(135deg, var(--color-warning), var(--color-warning-700));
+}
+
+.report-card:hover .report-icon.status {
+  background: linear-gradient(135deg, var(--color-link), #6b46c1);
+}
+
+/* Transições suaves para arrows */
+.report-arrow svg {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estados de foco para acessibilidade */
+.report-card:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-main);
+}
+
+.report-card:focus .report-title {
+  color: var(--color-main);
+}

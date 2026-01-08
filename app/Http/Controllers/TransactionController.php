@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Carbon\Carbon;
 
 class TransactionController extends Controller
@@ -259,5 +260,73 @@ class TransactionController extends Controller
     {
         $situations = TransactionSituation::options();
         return response()->json($situations);
+    }
+
+    // Adicionar este método ao final da classe TransactionController
+
+    /**
+     * Export transactions to PDF
+     */
+    public function exportPdf(Request $request)
+    {
+        // Aplicar os mesmos filtros da index
+        $query = Transaction::with(['category'])
+            ->where('user_id', Auth::id())
+            ->orderBy('due_date', 'desc');
+
+        // Aplicar filtros
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%")
+                    ->orWhereHas('category', function ($categoryQuery) use ($search) {
+                        $categoryQuery->where('name', 'like', "%{$search}%");
+                    });
+            });
+        }
+
+        if ($request->filled('type')) {
+            $query->where('type', $request->type);
+        }
+
+        if ($request->filled('situation')) {
+            $query->where('situation', $request->situation);
+        }
+
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
+        }
+
+        if ($request->filled('data_inicio')) {
+            $query->where('due_date', '>=', $request->data_inicio);
+        }
+
+        if ($request->filled('data_fim')) {
+            $query->where('due_date', '<=', $request->data_fim);
+        }
+
+        $transactions = $query->get();
+
+        // Calcular totais
+        $totalEntradas = $transactions->where('type', 'entrada')->sum('amount');
+        $totalSaidas = $transactions->where('type', 'saida')->sum('amount');
+        $saldo = $totalEntradas - $totalSaidas;
+
+        // Dados para o PDF
+        $data = [
+            'transactions' => $transactions,
+            'totalTransactions' => $transactions->count(),
+            'totalEntradas' => $totalEntradas,
+            'totalSaidas' => $totalSaidas,
+            'saldo' => $saldo,
+            'filters' => $request->all(),
+            'generatedAt' => now()->format('d/m/Y H:i:s'),
+            'user' => Auth::user() // ✅ CORREÇÃO: Auth::user()
+        ];
+
+        // Gerar PDF real
+        $pdf = PDF::loadView('transactions.pdf', $data);
+        return $pdf->download('relatorio-transacoes-' . now()->format('Y-m-d') . '.pdf');
     }
 }

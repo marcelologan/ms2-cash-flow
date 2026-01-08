@@ -1,4 +1,7 @@
 <x-app-layout>
+    @push('head')
+        <meta name="export-pdf-url" content="{{ route('transactions.export-pdf') }}">
+    @endpush
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="page-title">Transações</h2>
@@ -60,7 +63,7 @@
             <div class="card-header">
                 <div class="flex justify-between items-center">
                     <h3 class="card-title">Filtros</h3>
-                    
+
                 </div>
             </div>
             <div class="card-body" x-data="transactionFilters()" x-init="initFilters()">
@@ -111,8 +114,8 @@
                         <!-- Categoria -->
                         <div class="form-group">
                             <label for="category_id" class="form-label">Categoria</label>
-                            <select name="category_id" id="category_id" class="form-select"
-                                x-model="selectedCategory" :disabled="isLoadingCategories">
+                            <select name="category_id" id="category_id" class="form-select" x-model="selectedCategory"
+                                :disabled="isLoadingCategories">
                                 <option value="">Todas as categorias</option>
                                 <template x-for="category in availableCategories" :key="category.id">
                                     <option :value="category.id"
@@ -155,12 +158,20 @@
                                 </svg>
                                 Limpar
                             </a>
-                        </div>
+                            <a href="{{ route('transactions.export-pdf', request()->query()) }}"
+                                class="btn btn-success">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                                Exportar PDF
+                            </a>
 
-                        <div class="text-sm text-gray-600">
-                            {{ $transactions->total() }} transação(ões) encontrada(s)
+                            <div class="text-sm text-gray-600">
+                                {{ $transactions->total() }} transação(ões) encontrada(s)
+                            </div>
                         </div>
-                    </div>
                 </form>
             </div>
         </div>

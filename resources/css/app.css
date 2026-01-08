@@ -10,12 +10,16 @@
 @import './components/buttons.css';
 @import './components/forms.css';
 @import './components/tables.css';
+@import './components/reports.css';  /* ← NOVA LINHA */
 
 /* Importar layouts */
 @import './layouts/main.css';
 
 /* Importar cores customizadas */
 @import './custom-colors.css';
+
+/* Adicionar no final */
+@import 'components/export-button.css';
 
 /* Estilos globais */
 body {
