@@ -9,7 +9,7 @@ Excelente cobertura de screenshots! Você capturou tudo mesmo - desde landing pa
 ```markdown
 # 💰 MS2 Cash Flow - Sistema de Controle Financeiro
 
-![Logo](public/images/MS2%20Cash_Flow_Logo.png)
+![Logo](public/images/MS2_20Cash_Flow_Logo.png)
 
 ## 📋 Sobre o Projeto
 
